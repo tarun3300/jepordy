@@ -13,7 +13,12 @@ class valueTableViewController: UITableViewController {
     var valueArray = [Int]()
     var catName = ""
     
-
+    var category = "sfasfsaf"
+    var answer = "asfasd"
+    var question = "asdfasdfsa"
+    var value = 0
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,9 +101,10 @@ class valueTableViewController: UITableViewController {
     }
     
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+       performSegue(withIdentifier: "values-questions", sender: self)
+    }
 
     
     // Override to support conditional editing of the table view.
@@ -135,14 +141,22 @@ class valueTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "values-questions"
+        {
+            let vc: QuestionsViewController = segue.destination as! QuestionsViewController
+            
+            vc.category = category
+            vc.value = value
+            vc.question = question
+            vc.answer = answer
+        }
     }
-    */
+    
 
 }

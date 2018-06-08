@@ -109,5 +109,10 @@ class CategoryTabControler: UIViewController {
             //vc.arrPlayers = sendArray
         }
     }
+    
+    @IBAction func unwindToStart(segue: UIStoryboardSegue)
+    {
+        
+    }
 
 }

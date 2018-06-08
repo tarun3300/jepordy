@@ -8,10 +8,14 @@
 
 import Foundation
 
-struct Player
+class Player
 {
-    let name: String
+    var name: String
     var score: Int
+    init () {
+            name = ""
+        score = 0
+    }
     
     init(Name: String, Score: Int) {
         name = Name

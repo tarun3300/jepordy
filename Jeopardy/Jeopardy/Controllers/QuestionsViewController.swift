@@ -24,26 +24,29 @@ class QuestionsViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
     
     // MARK: - Variables
     
-    var category : String = ""
+    var category : String = "Error loading the category"
     var value : Int = 0
-    var question: String = ""
+    var question: String = "Error loading the question"
+    var answer : String = ""
+    
+    var selectedPlayer = Player()
     
     // MARK: - Constants
     
     let players = Singleton.sharedInstance.playerArray
     
     // MARK: - Load
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        btnEvaluate.layer.cornerRadius = 30
-        lblCategory.text = "lala"
-        lblValue.text = "lala"
-        lblQuestion.text = "lala"
         
+        btnEvaluate.layer.cornerRadius = 30
+        lblCategory.text = category
+        lblValue.text = String(value)
+        lblQuestion.text = question
         lblAnswered.isHidden = true
         
+        selectedPlayer = players[0]
     }
     
     // MARK: - Delegates
@@ -64,19 +67,45 @@ class QuestionsViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        
+        selectedPlayer = players[row]
     }
     
     // MARK: - Methods
     
     // MARK: - Actions
-
+    
     @IBAction func textFieldResign(_ sender: UITextField) {
         
         sender.resignFirstResponder()
     }
     
     @IBAction func btnEvaluate(_ sender: UIButton) {
+        
+        if txtAnswer.text != ""
+        {
+            if txtAnswer.text == answer
+            {
+                selectedPlayer.score += value
+                lblAnswered.isHidden = false
+                lblAnswered.text = "Answered by " + selectedPlayer.name
+            }
+            else
+            {
+                lblAnswered.isHidden = false
+                lblAnswered.text = "Wrong Answer"
+            }
+        }
+        else
+        {
+            print("No input answer")
+        }
     }
+    
+    @IBAction func btnClose(_ sender: UIButton) {
+        
+       
+        self.performSegue(withIdentifier: "dismissQuestions", sender: self)
+    }
+    
     
 }
