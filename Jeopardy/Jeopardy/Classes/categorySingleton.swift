@@ -12,6 +12,7 @@ class Singleton: NSObject {
     // MARK: - Shared Instance
     
     var AllcategoryObject = [[String: AnyObject]]()
+    var selectedCategoryObject = [String]()
     
     static let sharedInstance: Singleton = {
         let instance = Singleton()

@@ -192,6 +192,7 @@
                                                 <state key="normal" title="START"/>
                                                 <connections>
                                                     <action selector="btnStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fEw-nM-jsg"/>
+                                                    <segue destination="Lvf-Hp-iav" kind="show" id="oCd-bT-3eF"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -237,7 +238,6 @@
                         <outlet property="txtPlayer2" destination="I2T-gI-rQp" id="Mco-Hk-K56"/>
                         <outlet property="txtPlayer3" destination="mNZ-ha-8ZO" id="6Mk-gK-E7n"/>
                         <outlet property="txtPlayer4" destination="nYh-Rt-Efz" id="bE8-6B-3du"/>
-                        <segue destination="Mnj-RF-4fc" kind="show" identifier="segue" id="bi9-Z4-zGG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -298,7 +298,122 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8y-Sh-a1q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="132.68365817091455"/>
+            <point key="canvasLocation" x="914" y="-429"/>
+        </scene>
+        <!--Score Card-->
+        <scene sceneID="jU9-V0-pb9">
+            <objects>
+                <viewController id="zma-jZ-vYs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qPr-pa-RoH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hw0-s8-kmc">
+                                <rect key="frame" x="164" y="295" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="REY-bi-hQq"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Score Card" image="icons8-scorecard-50" landscapeImage="icons8-scorecard-50" id="CPA-rY-0WP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L4N-VQ-MDB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3024" y="252"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="tn0-G8-moo">
+            <objects>
+                <viewController id="Rtx-tK-HZC" customClass="CategoryTabControler" customModule="Jeopardy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sxf-dF-qYU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="g8s-dY-eGl">
+                                <rect key="frame" x="40" y="214.5" width="295" height="238"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7f-H3-2Pi">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="30"/>
+                                        <state key="normal" title="button 1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyk-8b-rKa">
+                                        <rect key="frame" x="0.0" y="52" width="295" height="30"/>
+                                        <state key="normal" title="button 2"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTO-il-Xe9">
+                                        <rect key="frame" x="0.0" y="104" width="295" height="30"/>
+                                        <state key="normal" title="button 3"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLW-9H-B9z">
+                                        <rect key="frame" x="0.0" y="156" width="295" height="30"/>
+                                        <state key="normal" title="button 4"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7o-qP-A12">
+                                        <rect key="frame" x="0.0" y="208" width="295" height="30"/>
+                                        <state key="normal" title="button 5"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g8s-dY-eGl" firstAttribute="leading" secondItem="inN-s9-PLC" secondAttribute="leading" constant="40" id="RTc-7f-ejq"/>
+                            <constraint firstItem="g8s-dY-eGl" firstAttribute="centerX" secondItem="sxf-dF-qYU" secondAttribute="centerX" id="j8r-64-Akb"/>
+                            <constraint firstItem="inN-s9-PLC" firstAttribute="trailing" secondItem="g8s-dY-eGl" secondAttribute="trailing" constant="40" id="oE5-NX-WYC"/>
+                            <constraint firstItem="g8s-dY-eGl" firstAttribute="centerY" secondItem="sxf-dF-qYU" secondAttribute="centerY" id="tH5-ip-wB8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="inN-s9-PLC"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="A9A-iV-JDU"/>
+                    <connections>
+                        <outlet property="category1" destination="z7f-H3-2Pi" id="UX4-c3-XAR"/>
+                        <outlet property="category2" destination="jyk-8b-rKa" id="qWL-kb-ixM"/>
+                        <outlet property="category3" destination="KTO-il-Xe9" id="Adr-C7-zc2"/>
+                        <outlet property="category4" destination="QLW-9H-B9z" id="Cdx-Z3-Y2p"/>
+                        <outlet property="category5" destination="X7o-qP-A12" id="lMO-wa-Ofn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4bz-WA-cpv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3023.1999999999998" y="-414.24287856071965"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1CV-fY-mfH">
+            <objects>
+                <viewController id="HG9-N8-jly" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hXD-IY-5CZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fEI-Qj-bZd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gxg-Ce-Iqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3768" y="-406"/>
+        </scene>
+        <!--Category Tabbar Controller-->
+        <scene sceneID="888-xX-OEw">
+            <objects>
+                <tabBarController id="Lvf-Hp-iav" customClass="CategoryTabbarController" customModule="Jeopardy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hDr-UP-OYW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Rtx-tK-HZC" kind="relationship" relationship="viewControllers" id="GEY-JA-A7g"/>
+                        <segue destination="zma-jZ-vYs" kind="relationship" relationship="viewControllers" id="0Mm-dG-qxg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jdE-xc-SSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1194" y="251"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-scorecard-50" width="25" height="25"/>
+    </resources>
 </document>

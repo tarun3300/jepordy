@@ -17,6 +17,7 @@
 		10B1CED120CAE1FB00F929EB /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1CED020CAE1FB00F929EB /* QuestionsViewController.swift */; };
 		8D70BE3B20CAE2E000D2724F /* categorySingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D70BE3A20CAE2E000D2724F /* categorySingleton.swift */; };
 		8D70BE3D20CAE36D00D2724F /* ExtensionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D70BE3C20CAE36D00D2724F /* ExtensionArray.swift */; };
+		8D70BE4320CAF38A00D2724F /* CategoryTabControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D70BE4220CAF38A00D2724F /* CategoryTabControler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		10B1CED020CAE1FB00F929EB /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		8D70BE3A20CAE2E000D2724F /* categorySingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categorySingleton.swift; sourceTree = "<group>"; };
 		8D70BE3C20CAE36D00D2724F /* ExtensionArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionArray.swift; sourceTree = "<group>"; };
+		8D70BE4220CAF38A00D2724F /* CategoryTabControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabControler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				10B1CECA20CACBD800F929EB /* StartViewController.swift */,
 				10B1CED020CAE1FB00F929EB /* QuestionsViewController.swift */,
+				8D70BE4220CAF38A00D2724F /* CategoryTabControler.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				10B1CED120CAE1FB00F929EB /* QuestionsViewController.swift in Sources */,
 				10B1CECB20CACBD800F929EB /* StartViewController.swift in Sources */,
 				8D70BE3D20CAE36D00D2724F /* ExtensionArray.swift in Sources */,
+				8D70BE4320CAF38A00D2724F /* CategoryTabControler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
