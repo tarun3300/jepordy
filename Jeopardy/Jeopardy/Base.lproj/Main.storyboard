@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -444,22 +444,37 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7f-H3-2Pi">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="30"/>
                                         <state key="normal" title="button 1"/>
+                                        <connections>
+                                            <action selector="cat1pressed:" destination="Rtx-tK-HZC" eventType="touchUpInside" id="Ckm-8Q-WWe"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyk-8b-rKa">
                                         <rect key="frame" x="0.0" y="52" width="295" height="30"/>
                                         <state key="normal" title="button 2"/>
+                                        <connections>
+                                            <action selector="cat2pressed:" destination="Rtx-tK-HZC" eventType="touchUpInside" id="xwd-TT-FAj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTO-il-Xe9">
                                         <rect key="frame" x="0.0" y="104" width="295" height="30"/>
                                         <state key="normal" title="button 3"/>
+                                        <connections>
+                                            <action selector="cat3pressed:" destination="Rtx-tK-HZC" eventType="touchUpInside" id="ogH-Dl-rGX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLW-9H-B9z">
                                         <rect key="frame" x="0.0" y="156" width="295" height="30"/>
                                         <state key="normal" title="button 4"/>
+                                        <connections>
+                                            <action selector="cat4pressed:" destination="Rtx-tK-HZC" eventType="touchUpInside" id="TdY-kb-BSb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7o-qP-A12">
                                         <rect key="frame" x="0.0" y="208" width="295" height="30"/>
                                         <state key="normal" title="button 5"/>
+                                        <connections>
+                                            <action selector="cat5presseed:" destination="Rtx-tK-HZC" eventType="touchUpInside" id="pss-92-PAW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -476,33 +491,56 @@
                     <tabBarItem key="tabBarItem" title="Item 1" id="A9A-iV-JDU"/>
                     <connections>
                         <outlet property="category1" destination="z7f-H3-2Pi" id="UX4-c3-XAR"/>
-                        <outlet property="category2" destination="jyk-8b-rKa" id="qWL-kb-ixM"/>
+                        <outlet property="category2" destination="jyk-8b-rKa" id="aiZ-Ar-LlR"/>
                         <outlet property="category3" destination="KTO-il-Xe9" id="Adr-C7-zc2"/>
                         <outlet property="category4" destination="QLW-9H-B9z" id="Cdx-Z3-Y2p"/>
                         <outlet property="category5" destination="X7o-qP-A12" id="lMO-wa-Ofn"/>
+                        <segue destination="dai-SS-YEO" kind="show" identifier="cat-segue" id="3i4-Gr-h4o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bz-WA-cpv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3023.1999999999998" y="-414.24287856071965"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="1CV-fY-mfH">
+        <!--Value Table View Controller-->
+        <scene sceneID="OGH-1f-sNQ">
             <objects>
-                <viewController id="HG9-N8-jly" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hXD-IY-5CZ">
+                <tableViewController id="dai-SS-YEO" customClass="valueTableViewController" customModule="Jeopardy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uJX-t3-l4x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="fEI-Qj-bZd"/>
-                    </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="eoP-RU-YrO" style="IBUITableViewCellStyleDefault" id="Jkz-Yn-fXR">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jkz-Yn-fXR" id="oVT-Co-OKH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eoP-RU-YrO">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dai-SS-YEO" id="Nah-qE-1Y6"/>
+                            <outlet property="delegate" destination="dai-SS-YEO" id="1YC-RB-wwU"/>
+                        </connections>
+                    </tableView>
                     <connections>
-                        <segue destination="Mnj-RF-4fc" kind="show" identifier="values-questions" id="rg1-m2-ff3"/>
+                        <outlet property="tableView" destination="uJX-t3-l4x" id="7aj-fI-hsr"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gxg-Ce-Iqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uDD-ta-GkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3768" y="-406"/>
+            <point key="canvasLocation" x="3785" y="-380"/>
         </scene>
         <!--Category Tabbar Controller-->
         <scene sceneID="888-xX-OEw">

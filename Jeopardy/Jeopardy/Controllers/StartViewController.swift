@@ -122,9 +122,9 @@ class StartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
                     
                     
                     OperationQueue.main.addOperation({
-                        print("JSON",json)
-                        print(json.count)
-                        print("first object::",json[0])
+//                        print("JSON",json)
+//                        print(json.count)
+//                        print("first object::",json[0])
                         var allCategory = [String]()
                        
                         //                        print(json[0][value(forKey: "value") as! String])
@@ -133,7 +133,7 @@ class StartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
                         for jsonElement in json{
                             var jsonDict = [String: AnyObject]()
                             jsonDict = jsonElement as! [String : AnyObject]
-                            print(jsonDict["category"]!["title"] as! String)
+//                            print(jsonDict["category"]!["title"] as! String)
                             allCategory.append(jsonDict["category"]!["title"] as! String)
                             allCategory = Array(Set(allCategory))
                             
@@ -212,14 +212,6 @@ class StartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         
         
         Singleton.sharedInstance.playerArray = sendArray
-        
-        print(sendArray)
-
-        
-        
-        self.performSegue(withIdentifier: "segue", sender: self)
-
-//        self.performSegue(withIdentifier: "segue", sender: self)
 
     }
     

@@ -17,6 +17,9 @@ class CategoryTabControler: UIViewController {
     @IBOutlet weak var category4: UIButton!
     @IBOutlet weak var category5: UIButton!
     
+    var SendButton = ""
+    
+ 
     
     
     
@@ -53,6 +56,40 @@ class CategoryTabControler: UIViewController {
     }
     
 
+    //    MARK: ACTIONS
+    
+
+    @IBAction func cat1pressed(_ sender: Any) {
+        SendButton = (category1.titleLabel?.text)!
+        performSegue(withIdentifier: "cat-segue", sender: self)
+        
+    }
+    
+
+
+    @IBAction func cat2pressed(_ sender: Any) {
+        SendButton = (category1.titleLabel?.text)!
+        performSegue(withIdentifier: "cat-segue", sender: self)
+    }
+    
+    
+    @IBAction func cat4pressed(_ sender: Any) {
+        SendButton = (category3.titleLabel?.text)!
+        performSegue(withIdentifier: "cat-segue", sender: self)
+    }
+    
+    @IBAction func cat3pressed(_ sender: Any) {
+        SendButton = (category4.titleLabel?.text)!
+    performSegue(withIdentifier: "cat-segue", sender: self)
+    }
+    
+    
+    @IBAction func cat5presseed(_ sender: Any) {
+        SendButton = (category5.titleLabel?.text)!
+        performSegue(withIdentifier: "cat-segue", sender: self)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -62,5 +99,15 @@ class CategoryTabControler: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "cat-segue"
+        {
+            let vc: valueTableViewController = segue.destination as! valueTableViewController
+            vc.catName = SendButton
+            //vc.arrPlayers = sendArray
+        }
+    }
 
 }
