@@ -30,6 +30,16 @@ class CategoryTabControler: UIViewController {
         category3.setTitle(Singleton.sharedInstance.selectedCategoryObject[2], for: .normal)
         category4.setTitle(Singleton.sharedInstance.selectedCategoryObject[3], for: .normal)
         category5.setTitle(Singleton.sharedInstance.selectedCategoryObject[4], for: .normal)
+        category1.layer.cornerRadius = 10
+        category1.clipsToBounds = true
+        category2.layer.cornerRadius = 10
+        category2.clipsToBounds = true
+        category3.layer.cornerRadius = 10
+        category3.clipsToBounds = true
+        category4.layer.cornerRadius = 10
+        category4.clipsToBounds = true
+        category5.layer.cornerRadius = 10
+        category5.clipsToBounds = true
         
         
         
