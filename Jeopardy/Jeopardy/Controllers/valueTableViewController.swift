@@ -12,11 +12,12 @@ class valueTableViewController: UITableViewController {
 
     var valueArray = [Int]()
     var catName = ""
+    var finalArray = [[String : AnyObject]]()
     
     var category = "sfasfsaf"
     var answer = "asfasd"
     var question = "asdfasdfsa"
-    var value = 0
+    var value22 = 0
     
     
     
@@ -28,6 +29,7 @@ class valueTableViewController: UITableViewController {
         
         let catArray = Singleton.sharedInstance.AllcategoryObject
         
+        
         for element in catArray{
             
             print(element["category"]!["title"] as! String)
@@ -35,6 +37,8 @@ class valueTableViewController: UITableViewController {
         
             
             if element["category"]!["title"] as! String == catName{
+        
+                finalArray.append(element)
               var elementValue = nullToNil(value: element["value"])
                 
                 
@@ -54,6 +58,7 @@ class valueTableViewController: UITableViewController {
         }
         
         print( valueArray)
+        
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -103,6 +108,21 @@ class valueTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        let value2 = valueArray[indexPath.row]
+        print(value2)
+        for element in finalArray{
+            var elementValue = nullToNil(value: element["value"])
+            let value: Int? = elementValue != nil ? Int(truncating: elementValue as! NSNumber ) : 50
+            if value2 == value {
+                category = catName
+                answer = element["answer"] as! String
+                question = element["question"] as! String
+                value22 = value!
+                
+                
+            }
+            
+        }
        performSegue(withIdentifier: "values-questions", sender: self)
     }
 
@@ -152,7 +172,7 @@ class valueTableViewController: UITableViewController {
             let vc: QuestionsViewController = segue.destination as! QuestionsViewController
             
             vc.category = category
-            vc.value = value
+            vc.value = value22
             vc.question = question
             vc.answer = answer
         }
