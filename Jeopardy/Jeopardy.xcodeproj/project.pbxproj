@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		10B1CEAB20CAC32700F929EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1CEAA20CAC32700F929EB /* AppDelegate.swift */; };
-		10B1CEAD20CAC32700F929EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1CEAC20CAC32700F929EB /* ViewController.swift */; };
 		10B1CEB020CAC32700F929EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B1CEAE20CAC32700F929EB /* Main.storyboard */; };
 		10B1CEB220CAC32800F929EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B1CEB120CAC32800F929EB /* Assets.xcassets */; };
 		10B1CEB520CAC32800F929EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B1CEB320CAC32800F929EB /* LaunchScreen.storyboard */; };
 		10B1CEC020CAC32800F929EB /* JeopardyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1CEBF20CAC32800F929EB /* JeopardyTests.swift */; };
+		10B1CECB20CACBD800F929EB /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1CECA20CACBD800F929EB /* StartViewController.swift */; };
+		10B1CECF20CAD1DC00F929EB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1CECE20CAD1DC00F929EB /* Player.swift */; };
+		10B1CED120CAE1FB00F929EB /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1CED020CAE1FB00F929EB /* QuestionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +30,6 @@
 /* Begin PBXFileReference section */
 		10B1CEA720CAC32700F929EB /* Jeopardy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jeopardy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B1CEAA20CAC32700F929EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		10B1CEAC20CAC32700F929EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		10B1CEAF20CAC32700F929EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10B1CEB120CAC32800F929EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10B1CEB420CAC32800F929EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +37,9 @@
 		10B1CEBB20CAC32800F929EB /* JeopardyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JeopardyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B1CEBF20CAC32800F929EB /* JeopardyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeopardyTests.swift; sourceTree = "<group>"; };
 		10B1CEC120CAC32800F929EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10B1CECA20CACBD800F929EB /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		10B1CECE20CAD1DC00F929EB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		10B1CED020CAE1FB00F929EB /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,9 @@
 		10B1CEA920CAC32700F929EB /* Jeopardy */ = {
 			isa = PBXGroup;
 			children = (
+				10B1CECD20CAD1BC00F929EB /* Classes */,
+				10B1CECC20CACC5B00F929EB /* Controllers */,
 				10B1CEAA20CAC32700F929EB /* AppDelegate.swift */,
-				10B1CEAC20CAC32700F929EB /* ViewController.swift */,
 				10B1CEAE20CAC32700F929EB /* Main.storyboard */,
 				10B1CEB120CAC32800F929EB /* Assets.xcassets */,
 				10B1CEB320CAC32800F929EB /* LaunchScreen.storyboard */,
@@ -94,6 +99,23 @@
 				10B1CEC120CAC32800F929EB /* Info.plist */,
 			);
 			path = JeopardyTests;
+			sourceTree = "<group>";
+		};
+		10B1CECC20CACC5B00F929EB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				10B1CECA20CACBD800F929EB /* StartViewController.swift */,
+				10B1CED020CAE1FB00F929EB /* QuestionsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		10B1CECD20CAD1BC00F929EB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				10B1CECE20CAD1DC00F929EB /* Player.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +219,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10B1CEAD20CAC32700F929EB /* ViewController.swift in Sources */,
 				10B1CEAB20CAC32700F929EB /* AppDelegate.swift in Sources */,
+				10B1CECF20CAD1DC00F929EB /* Player.swift in Sources */,
+				10B1CED120CAE1FB00F929EB /* QuestionsViewController.swift in Sources */,
+				10B1CECB20CACBD800F929EB /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +385,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X98AFCC6G2;
 				INFOPLIST_FILE = Jeopardy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -368,7 +393,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mayago.Jeopardy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -379,6 +404,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X98AFCC6G2;
 				INFOPLIST_FILE = Jeopardy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,7 +412,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mayago.Jeopardy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
