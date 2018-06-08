@@ -214,14 +214,13 @@ class StartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         Singleton.sharedInstance.playerArray = sendArray
         
         print(sendArray)
-<<<<<<< HEAD
-        
+
         
         
         self.performSegue(withIdentifier: "segue", sender: self)
-=======
+
 //        self.performSegue(withIdentifier: "segue", sender: self)
->>>>>>> 9d9bcf59203f809f3faa7187bc1d437bda6dd684
+
     }
     
     @IBAction func clickDone(_ sender: Any) {
