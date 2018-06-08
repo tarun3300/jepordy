@@ -31,6 +31,7 @@ class StartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     // MARK: - Variables
     
     var sendArray = [Player]()
+    var randomcategoryArray = [[String: AnyObject]]()
     
     // MARK: - Constants
     
@@ -40,6 +41,7 @@ class StartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         getDataFromServer()
         
         btnStart.layer.cornerRadius = 35
         
@@ -124,7 +126,7 @@ class StartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
                         print(json.count)
                         print("first object::",json[0])
                         var allCategory = [String]()
-                        var randomcategoryArray = [[String: AnyObject]]()
+                       
                         //                        print(json[0][value(forKey: "value") as! String])
                         //                        print(json[0].keys)
                         
@@ -139,6 +141,7 @@ class StartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
                         print(allCategory.count)
                         let shuffledAllCategoryArray = allCategory.shuffled
                         let randomarray = shuffledAllCategoryArray.choose(5)
+                        Singleton.sharedInstance.selectedCategoryObject = randomarray
                         print(randomarray)
                         //                        print("categoryArray1",categoryArray1[0]);
                         for jsonElement in json{
@@ -149,22 +152,23 @@ class StartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
                                 
                                 if (jsonDict["category"]!["title"] as! String == element){
                                     
-                                    randomcategoryArray.append(jsonDict)
+                                    self.randomcategoryArray.append(jsonDict)
                                     
                                 }
                                 
                             }
                         }
                         
-                        print("random Category Array:::",randomcategoryArray)
-                        Singleton.sharedInstance.AllcategoryObject = randomcategoryArray
-                        print(randomcategoryArray.count)
-                        
+                        print("random Category Array:::",self.randomcategoryArray)
+                        Singleton.sharedInstance.AllcategoryObject = self.randomcategoryArray
+                        print(self.randomcategoryArray.count)
+                    
                         
                     })
                     
                 }catch let error as NSError{
                     print(error)
+                
                 }
             }
         }).resume()
@@ -173,9 +177,13 @@ class StartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
 
     // MARk: - Actions
     @IBAction func btnStart(_ sender: UIButton){
-        getDataFromServer()
+        
         print("******************")
-        print(Singleton.sharedInstance.AllcategoryObject)
+       
+            print(Singleton.sharedInstance.AllcategoryObject)
+        
+        
+        
         sendArray = []
         var player1 = Player(Name: txtPlayer1.text!, Score: 0)
         sendArray.append(player1)
@@ -206,10 +214,14 @@ class StartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         Singleton.sharedInstance.playerArray = sendArray
         
         print(sendArray)
+<<<<<<< HEAD
         
         
         
         self.performSegue(withIdentifier: "segue", sender: self)
+=======
+//        self.performSegue(withIdentifier: "segue", sender: self)
+>>>>>>> 9d9bcf59203f809f3faa7187bc1d437bda6dd684
     }
     
     @IBAction func clickDone(_ sender: Any) {
