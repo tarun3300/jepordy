@@ -108,10 +108,74 @@ class StartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     }
     
     // MARK: - Methods
+    func getDataFromServer(){
+        let url = URL(string: "http://jservice.io/api/clues")
+        URLSession.shared.dataTask(with: url!, completionHandler: {
+            (data, response, error) in
+            if(error != nil){
+                print("error")
+            }else{
+                do{
+                    let json = try JSONSerialization.jsonObject(with: data!, options:.mutableContainers) as! Array<Any>
+                    
+                    
+                    OperationQueue.main.addOperation({
+                        print("JSON",json)
+                        print(json.count)
+                        print("first object::",json[0])
+                        var allCategory = [String]()
+                        var randomcategoryArray = [[String: AnyObject]]()
+                        //                        print(json[0][value(forKey: "value") as! String])
+                        //                        print(json[0].keys)
+                        
+                        for jsonElement in json{
+                            var jsonDict = [String: AnyObject]()
+                            jsonDict = jsonElement as! [String : AnyObject]
+                            print(jsonDict["category"]!["title"] as! String)
+                            allCategory.append(jsonDict["category"]!["title"] as! String)
+                            allCategory = Array(Set(allCategory))
+                            
+                        }
+                        print(allCategory.count)
+                        let shuffledAllCategoryArray = allCategory.shuffled
+                        let randomarray = shuffledAllCategoryArray.choose(5)
+                        print(randomarray)
+                        //                        print("categoryArray1",categoryArray1[0]);
+                        for jsonElement in json{
+                            var jsonDict = [String: AnyObject]()
+                            jsonDict = jsonElement as! [String : AnyObject]
+                            
+                            for element in randomarray{
+                                
+                                if (jsonDict["category"]!["title"] as! String == element){
+                                    
+                                    randomcategoryArray.append(jsonDict)
+                                    
+                                }
+                                
+                            }
+                        }
+                        
+                        print("random Category Array:::",randomcategoryArray)
+                        Singleton.sharedInstance.AllcategoryObject = randomcategoryArray
+                        print(randomcategoryArray.count)
+                        
+                        
+                    })
+                    
+                }catch let error as NSError{
+                    print(error)
+                }
+            }
+        }).resume()
+        
+    }
 
     // MARk: - Actions
-    @IBAction func btnStart(_ sender: UIButton)
-    {
+    @IBAction func btnStart(_ sender: UIButton){
+        getDataFromServer()
+        print("******************")
+        print(Singleton.sharedInstance.AllcategoryObject)
         sendArray = []
         var player1 = Player(Name: txtPlayer1.text!, Score: 0)
         sendArray.append(player1)
