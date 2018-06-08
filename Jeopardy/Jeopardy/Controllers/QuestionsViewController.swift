@@ -8,28 +8,75 @@
 
 import UIKit
 
-class QuestionsViewController: UIViewController {
+class QuestionsViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource, UITextFieldDelegate {
+    override func didReceiveMemoryWarning() {super.didReceiveMemoryWarning()}
+    
+    // MARK: - Interface
+    
+    @IBOutlet weak var lblCategory: UILabel!
+    @IBOutlet weak var lblValue: UILabel!
+    @IBOutlet weak var lblQuestion: UILabel!
+    @IBOutlet weak var txtAnswer: UITextField!
+    @IBOutlet weak var pickerPlayers: UIPickerView!
+    @IBOutlet weak var btnEvaluate: UIButton!
+    @IBOutlet weak var lblAnswered: UILabel!
+    
+    
+    // MARK: - Variables
+    
+    var category : String = ""
+    var value : Int = 0
+    var question: String = ""
+    
+    // MARK: - Constants
+    
+    let players = Singleton.sharedInstance.playerArray
+    
+    // MARK: - Load
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        btnEvaluate.layer.cornerRadius = 30
+        lblCategory.text = "lala"
+        lblValue.text = "lala"
+        lblQuestion.text = "lala"
+        
+        lblAnswered.isHidden = true
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Delegates
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
-    */
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return players.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return players[row].name
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        
+    }
+    
+    // MARK: - Methods
+    
+    // MARK: - Actions
 
+    @IBAction func textFieldResign(_ sender: UITextField) {
+        
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func btnEvaluate(_ sender: UIButton) {
+    }
+    
 }

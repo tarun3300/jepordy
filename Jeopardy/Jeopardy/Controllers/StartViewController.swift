@@ -210,8 +210,18 @@ class StartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             sendArray.append(player2)
         }
         
+        
+        Singleton.sharedInstance.playerArray = sendArray
+        
         print(sendArray)
+<<<<<<< HEAD
+        
+        
+        
+        self.performSegue(withIdentifier: "segue", sender: self)
+=======
 //        self.performSegue(withIdentifier: "segue", sender: self)
+>>>>>>> 9d9bcf59203f809f3faa7187bc1d437bda6dd684
     }
     
     @IBAction func clickDone(_ sender: Any) {
@@ -224,12 +234,12 @@ class StartViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       
-        /*if segue.identifier "segue"
+        if segue.identifier == "segue"
         {
-            let vc: Destination = segue.destination as! Destination
+            let vc: QuestionsViewController = segue.destination as! QuestionsViewController
             
-            vc.object = object
-        }*/
+            //vc.arrPlayers = sendArray
+        }
     }
     
 
